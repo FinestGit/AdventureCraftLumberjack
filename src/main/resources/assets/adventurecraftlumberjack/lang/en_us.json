@@ -1,0 +1,13 @@
+{
+  "itemGroup.adventurecraftlumberjack": "Example Mod Tab",
+  "block.adventurecraftlumberjack.example_block": "Example Block",
+  "item.adventurecraftlumberjack.example_item": "Example Item",
+
+  "adventurecraftlumberjack.configuration.title": "AdventureCraft Lumberjack Configs",
+  "adventurecraftlumberjack.configuration.section.adventurecraftlumberjack.common.toml": "AdventureCraft Lumberjack Configs",
+  "adventurecraftlumberjack.configuration.section.adventurecraftlumberjack.common.toml.title": "AdventureCraft Lumberjack Configs",
+  "adventurecraftlumberjack.configuration.items": "Item List",
+  "adventurecraftlumberjack.configuration.logDirtBlock": "Log Dirt Block",
+  "adventurecraftlumberjack.configuration.magicNumberIntroduction": "Magic Number Text",
+  "adventurecraftlumberjack.configuration.magicNumber": "Magic Number"
+}
