@@ -11,10 +11,12 @@ import net.neoforged.neoforge.event.server.ServerStartedEvent;
 public class LumberjackServerEvents {
     @SubscribeEvent
     public static void onServerStarting(ServerStartedEvent event) {
+        AdventureCraftLumberjack.LOGGER.info("Server started; players online: {}",
+                event.getServer().getPlayerList().getPlayerCount());
         for (ServerPlayer player : event.getServer().getPlayerList().getPlayers()) {
             LumberjackData data = LumberjackAttachments.get(player);
-            AdventureCraftLumberjack.LOGGER.info("Player Experience: %d", data.getTotalExperience());
-            AdventureCraftLumberjack.LOGGER.info("Player Level: %d", data.getLevel());
+            AdventureCraftLumberjack.LOGGER.info("Player Experience: {}", data.getTotalExperience());
+            AdventureCraftLumberjack.LOGGER.info("Player Level: {}", data.getLevel());
         }
     }
 }
