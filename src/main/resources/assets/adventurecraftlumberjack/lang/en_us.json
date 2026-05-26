@@ -1,4 +1,7 @@
 {
+  "itemGroup.adventurecraftlumberjack.lumberjack": "AdventureCraft Lumberjack Logs",
+  "block.adventurecraftlumberjack.lumberjack_oak_log": "Lumberjack Oak Log",
+
   "itemGroup.adventurecraftlumberjack": "Example Mod Tab",
   "block.adventurecraftlumberjack.example_block": "Example Block",
   "item.adventurecraftlumberjack.example_item": "Example Item",

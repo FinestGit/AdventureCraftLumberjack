@@ -14,6 +14,8 @@ public class ModRegistry {
             .create(Registries.CREATIVE_MODE_TAB, AdventureCraftLumberjack.MODID);
 
     public static void register(IEventBus modEventBus) {
+        LumberjackBlocks.register();
+        LumberjackCreativeTabs.register();
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
