@@ -3,6 +3,7 @@ package com.finestgit.adventurecraft.lumberjack.datagen;
 import java.util.Optional;
 import java.util.function.Consumer;
 
+import com.finestgit.adventurecraft.lumberjack.AdventureCraftLumberjack;
 import com.finestgit.adventurecraft.lumberjack.registry.LumberjackBlocks;
 import com.finestgit.adventurecraft.lumberjack.registry.LumberjackItems;
 
@@ -50,7 +51,8 @@ public class LumberjackAdvancementGenerator implements AdvancementSubProvider {
         builder.addCriterion("chop_copper_log",
                 lootTableUsedCriterion(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get().getLootTable()));
 
-        builder.save(saver, "lumberjack/first_chop");
+        saver.accept(builder
+                .build(Identifier.fromNamespaceAndPath(AdventureCraftLumberjack.MODID, "lumberjack/first_chop")));
     }
 
     private static Criterion<?> lootTableUsedCriterion(Optional<ResourceKey<LootTable>> lootTable) {
