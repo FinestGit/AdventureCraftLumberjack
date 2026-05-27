@@ -1,0 +1,8 @@
+{
+  "block.adventurecraftlumberjack.lumberjack_copper_oak_log": "Lumberjack Copper Oak Log",
+  "block.adventurecraftlumberjack.lumberjack_oak_log": "Lumberjack Oak Log",
+  "item.adventurecraftlumberjack.lumberjack_copper_oak_timber": "Copper Oak Timber",
+  "item.adventurecraftlumberjack.lumberjack_oak_timber": "Oak Timber",
+  "itemGroup.adventurecraftlumberjack.lumberjack_items": "AdventureCraft Lumberjack Items",
+  "itemGroup.adventurecraftlumberjack.lumberjack_logs": "AdventureCraft Lumberjack Logs"
+}
