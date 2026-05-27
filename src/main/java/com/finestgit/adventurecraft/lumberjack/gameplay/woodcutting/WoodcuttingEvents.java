@@ -55,11 +55,10 @@ public class WoodcuttingEvents {
         }
         Player player = event.getEntity();
 
-        // float baseSpeed = 1.0f;
+         float baseSpeed = 1.0f;
 
-        // float tierFactor = 5.0f * lumberjackBlock.getTier();
+         float tierFactor = lumberjackBlock.getTier() / 5.0f;
 
-        // event.setNewSpeed(event.getNewSpeed() * baseSpeed * tierFactor);
-        event.setNewSpeed(event.getNewSpeed());
+         event.setNewSpeed(event.getNewSpeed() * baseSpeed * tierFactor);
     }
 }
