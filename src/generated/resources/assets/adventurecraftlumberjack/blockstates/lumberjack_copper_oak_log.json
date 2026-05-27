@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "adventurecraftlumberjack:block/lumberjack_copper_oak_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "adventurecraftlumberjack:block/lumberjack_copper_oak_log"
+    },
+    "axis=z": {
+      "model": "adventurecraftlumberjack:block/lumberjack_copper_oak_log",
+      "x": 90
+    }
+  }
+}
