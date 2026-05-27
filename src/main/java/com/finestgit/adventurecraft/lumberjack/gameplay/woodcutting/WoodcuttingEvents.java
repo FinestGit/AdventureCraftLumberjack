@@ -1,8 +1,8 @@
 package com.finestgit.adventurecraft.lumberjack.gameplay.woodcutting;
 
 import com.finestgit.adventurecraft.lumberjack.AdventureCraftLumberjack;
+import com.finestgit.adventurecraft.lumberjack.datagen.LumberjackBlockTagsProvider;
 import com.finestgit.adventurecraft.lumberjack.progression.LumberjackAttachments;
-import com.finestgit.adventurecraft.lumberjack.registry.LumberjackBlocks;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -26,7 +26,7 @@ public class WoodcuttingEvents {
             return;
         }
         // If it is not a Lumberjack Block we ignore it
-        if (!(event.getState().is(LumberjackBlocks.LUMBERJACK_OAK_LOG.get()))) {
+        if (!(event.getState().is(LumberjackBlockTagsProvider.WOODCUTTING_XP))) {
             return;
         }
         LumberjackAttachments.get(serverPlayer).addExperience(10L);
