@@ -34,10 +34,11 @@ public class LumberjackAdvancementGenerator implements AdvancementSubProvider {
         Advancement.Builder builder = Advancement.Builder.advancement()
                 .display(
                         LumberjackItems.LUMBERJACK_OAK_TIMBER.get(),
-                        Component.translatable("advancement.adventurecraftlumberjack.lumberjack.first_chop.title"),
+                        Component.translatable("advancements.adventurecraftlumberjack.lumberjack.first_chop.title"),
                         Component
-                                .translatable("advancement.adventurecraftlumberjack.lumberjack.first_chop.description"),
-                        Identifier.fromNamespaceAndPath("minecraft", "gui/advancement/backgrounds/husbandry"),
+                                .translatable(
+                                        "advancements.adventurecraftlumberjack.lumberjack.first_chop.description"),
+                        Identifier.fromNamespaceAndPath("minecraft", "gui/advancements/backgrounds/husbandry"),
                         AdvancementType.TASK,
                         true,
                         true,
