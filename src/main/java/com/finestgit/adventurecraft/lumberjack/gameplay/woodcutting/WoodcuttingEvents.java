@@ -54,15 +54,12 @@ public class WoodcuttingEvents {
             return;
         }
         Player player = event.getEntity();
-        // If the player is not a server player, ignore it.
-        if (!(player instanceof ServerPlayer serverPlayer)) {
-            return;
-        }
 
-        float baseSpeed = 1.0f;
+        // float baseSpeed = 1.0f;
 
-        float tierFactor = 5.0f * lumberjackBlock.getTier();
+        // float tierFactor = 5.0f * lumberjackBlock.getTier();
 
-        event.setNewSpeed(event.getNewSpeed() * baseSpeed * tierFactor);
+        // event.setNewSpeed(event.getNewSpeed() * baseSpeed * tierFactor);
+        event.setNewSpeed(event.getNewSpeed());
     }
 }
