@@ -20,6 +20,7 @@ public class AdventureCraftLumberjackDatagen {
 
         // Client: models, blockstates, item models
         generator.addProvider(true, new LumberjackModelProvider(generator.getPackOutput()));
+        generator.addProvider(true, new LumberjackLanguageProvider(generator.getPackOutput()));
 
         // Server: loot tables, tags, recipes, advancements
         generator.addProvider(true, new LumberjackBlockTagsProvider(generator.getPackOutput(), lookupProvider));
