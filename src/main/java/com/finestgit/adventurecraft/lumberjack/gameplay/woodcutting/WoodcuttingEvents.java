@@ -6,8 +6,11 @@ import com.finestgit.adventurecraft.lumberjack.datagen.LumberjackBlockTagsProvid
 import com.finestgit.adventurecraft.lumberjack.progression.LumberjackAttachments;
 
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.neoforged.neoforge.event.level.block.BreakBlockEvent;
 
 @EventBusSubscriber(modid = AdventureCraftLumberjack.MODID)
@@ -37,5 +40,29 @@ public class WoodcuttingEvents {
         long baseXpReward = lumberjackBlock.getBaseXpReward();
         // TODO: Handle the case where we need an axe or reward 0 XP
         LumberjackAttachments.get(serverPlayer).addExperience(baseXpReward);
+    }
+
+    @SubscribeEvent
+    public static void onBreakSpeed(BreakSpeed event) {
+        BlockState state = event.getState();
+        // Ignore non Lumberjack Blocks
+        if (!(state.getBlock() instanceof LumberjackLogBlock lumberjackBlock)) {
+            return;
+        }
+        // If the break speed is cancelled or speed is 0, ignore it.
+        if (event.isCanceled() || event.getNewSpeed() <= 0.0f) {
+            return;
+        }
+        Player player = event.getEntity();
+        // If the player is not a server player, ignore it.
+        if (!(player instanceof ServerPlayer serverPlayer)) {
+            return;
+        }
+
+        float baseSpeed = 1.0f;
+
+        float tierFactor = 5.0f * lumberjackBlock.getTier();
+
+        event.setNewSpeed(event.getNewSpeed() * baseSpeed * tierFactor);
     }
 }

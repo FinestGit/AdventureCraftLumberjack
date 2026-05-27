@@ -19,8 +19,8 @@ public class LumberjackBlocks {
                                         () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
                                                         .mapColor(MapColor.WOOD)
                                                         .sound(SoundType.WOOD)
-                                                        .destroyTime(5f)
-                                                        .strength(5f));
+                                                        .destroyTime(1f)
+                                                        .strength(1f));
 
         // Block Item Registration
         public static final DeferredItem<BlockItem> LUMBERJACK_OAK_LOG_ITEM = ModRegistry.ITEMS
