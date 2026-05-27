@@ -26,5 +26,10 @@ public class LumberjackLanguageProvider extends LanguageProvider {
         // Creative Tabs
         add("itemGroup.adventurecraftlumberjack.lumberjack_logs", "AdventureCraft Lumberjack Logs");
         add("itemGroup.adventurecraftlumberjack.lumberjack_items", "AdventureCraft Lumberjack Items");
+
+        // Advancements
+        add("advancements.adventurecraftlumberjack.lumberjack.first_chop.title", "First Chop");
+        add("advancements.adventurecraftlumberjack.lumberjack.first_chop.description",
+                "Break a Lumberjack Log and collect timber.");
     }
 }

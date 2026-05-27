@@ -1,0 +1,59 @@
+package com.finestgit.adventurecraft.lumberjack.datagen;
+
+import java.util.Optional;
+import java.util.function.Consumer;
+
+import com.finestgit.adventurecraft.lumberjack.registry.LumberjackBlocks;
+import com.finestgit.adventurecraft.lumberjack.registry.LumberjackItems;
+
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementRequirements;
+import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.Criterion;
+import net.minecraft.advancements.criterion.LootTableTrigger;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.data.advancements.AdvancementSubProvider;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.storage.loot.LootTable;
+
+public class LumberjackAdvancementGenerator implements AdvancementSubProvider {
+
+    @Override
+    public void generate(HolderLookup.Provider provider, Consumer<AdvancementHolder> saver) {
+        firstChop(saver);
+    }
+
+    /**
+     * "First Chop" - break any lumberjack log that awards woodcutting XP.
+     */
+    private void firstChop(Consumer<AdvancementHolder> saver) {
+        Advancement.Builder builder = Advancement.Builder.advancement()
+                .display(
+                        LumberjackItems.LUMBERJACK_OAK_TIMBER.get(),
+                        Component.translatable("advancement.adventurecraftlumberjack.lumberjack.first_chop.title"),
+                        Component
+                                .translatable("advancement.adventurecraftlumberjack.lumberjack.first_chop.description"),
+                        Identifier.fromNamespaceAndPath("minecraft", "gui/advancement/backgrounds/husbandry"),
+                        AdvancementType.TASK,
+                        true,
+                        true,
+                        false)
+                .requirements(AdvancementRequirements.Strategy.OR);
+
+        builder.addCriterion("chop_oak_log",
+                lootTableUsedCriterion(LumberjackBlocks.LUMBERJACK_OAK_LOG.get().getLootTable()));
+        builder.addCriterion("chop_copper_log",
+                lootTableUsedCriterion(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get().getLootTable()));
+
+        builder.save(saver, "lumberjack/first_chop");
+    }
+
+    private static Criterion<?> lootTableUsedCriterion(Optional<ResourceKey<LootTable>> lootTable) {
+        return LootTableTrigger.TriggerInstance
+                .lootTableUsed(lootTable.orElseThrow(() -> new IllegalStateException("Block has no loot table")));
+    }
+}

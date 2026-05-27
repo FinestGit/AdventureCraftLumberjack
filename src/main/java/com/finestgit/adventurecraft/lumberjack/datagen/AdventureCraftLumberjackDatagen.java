@@ -25,5 +25,6 @@ public class AdventureCraftLumberjackDatagen {
         // Server: loot tables, tags, recipes, advancements
         generator.addProvider(true, new LumberjackBlockTagsProvider(generator.getPackOutput(), lookupProvider));
         generator.addProvider(true, new LumberjackLootTableProvider(generator.getPackOutput(), lookupProvider));
+        generator.addProvider(true, new LumberjackAdvancementProvider(generator.getPackOutput(), lookupProvider));
     }
 }
