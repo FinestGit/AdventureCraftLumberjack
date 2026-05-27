@@ -14,7 +14,7 @@ public class LumberjackBlocks {
         public static final DeferredBlock<LumberjackBlock> LUMBERJACK_OAK_LOG = ModRegistry.BLOCKS
                         .register("lumberjack_oak_log",
                                         () -> new LumberjackBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD)
-                                                        .sound(SoundType.WOOD).destroyTime(5f).strength(5f), 1, 10,
+                                                        .sound(SoundType.WOOD), 1, 10,
                                                         true));
 
         // Block Item Registration
