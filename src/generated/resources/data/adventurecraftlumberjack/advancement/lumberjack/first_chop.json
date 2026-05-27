@@ -1,16 +1,24 @@
 {
   "criteria": {
-    "chop_copper_log": {
+    "got_copper_timber": {
       "conditions": {
-        "loot_table": "adventurecraftlumberjack:blocks/lumberjack_copper_oak_log"
+        "items": [
+          {
+            "items": "adventurecraftlumberjack:lumberjack_copper_oak_timber"
+          }
+        ]
       },
-      "trigger": "minecraft:player_generates_container_loot"
+      "trigger": "minecraft:inventory_changed"
     },
-    "chop_oak_log": {
+    "got_oak_timber": {
       "conditions": {
-        "loot_table": "adventurecraftlumberjack:blocks/lumberjack_oak_log"
+        "items": [
+          {
+            "items": "adventurecraftlumberjack:lumberjack_oak_timber"
+          }
+        ]
       },
-      "trigger": "minecraft:player_generates_container_loot"
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -27,8 +35,8 @@
   },
   "requirements": [
     [
-      "chop_oak_log",
-      "chop_copper_log"
+      "got_oak_timber",
+      "got_copper_timber"
     ]
   ],
   "sends_telemetry_event": true
