@@ -1,7 +1,7 @@
 package com.finestgit.adventurecraft.lumberjack.gameplay.woodcutting;
 
 import com.finestgit.adventurecraft.lumberjack.AdventureCraftLumberjack;
-import com.finestgit.adventurecraft.lumberjack.block.LumberjackBlock;
+import com.finestgit.adventurecraft.lumberjack.block.LumberjackLogBlock;
 import com.finestgit.adventurecraft.lumberjack.datagen.LumberjackBlockTagsProvider;
 import com.finestgit.adventurecraft.lumberjack.progression.LumberjackAttachments;
 
@@ -27,7 +27,7 @@ public class WoodcuttingEvents {
             return;
         }
         // If the block is not a Lumberjack Block ignore it.
-        if (!(event.getState().getBlock() instanceof LumberjackBlock lumberjackBlock)) {
+        if (!(event.getState().getBlock() instanceof LumberjackLogBlock lumberjackBlock)) {
             return;
         }
         // If it cannot award XP we can ignore it.

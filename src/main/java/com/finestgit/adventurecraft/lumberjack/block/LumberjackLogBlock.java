@@ -1,13 +1,13 @@
 package com.finestgit.adventurecraft.lumberjack.block;
 
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 
-public class LumberjackBlock extends Block {
+public class LumberjackLogBlock extends RotatedPillarBlock {
     private int tier;
     private long baseXpReward;
     private boolean allowHandBreak;
 
-    public LumberjackBlock(Properties properties, int tier, long baseXpReward, boolean allowHandBreak) {
+    public LumberjackLogBlock(Properties properties, int tier, long baseXpReward, boolean allowHandBreak) {
         super(properties);
         this.tier = tier;
         this.baseXpReward = baseXpReward;

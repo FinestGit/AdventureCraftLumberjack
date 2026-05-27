@@ -1,8 +1,9 @@
 package com.finestgit.adventurecraft.lumberjack.registry;
 
-import com.finestgit.adventurecraft.lumberjack.block.LumberjackBlock;
+import com.finestgit.adventurecraft.lumberjack.block.LumberjackLogBlock;
 
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -11,10 +12,13 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 public class LumberjackBlocks {
         // Block Registration
-        public static final DeferredBlock<LumberjackBlock> LUMBERJACK_OAK_LOG = ModRegistry.BLOCKS
+        public static final DeferredBlock<LumberjackLogBlock> LUMBERJACK_OAK_LOG = ModRegistry.BLOCKS
                         .register("lumberjack_oak_log",
-                                        () -> new LumberjackBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD)
-                                                        .sound(SoundType.WOOD), 1, 10,
+                                        () -> new LumberjackLogBlock(
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
+                                                                        .mapColor(MapColor.WOOD)
+                                                                        .sound(SoundType.WOOD),
+                                                        1, 10,
                                                         true));
 
         // Block Item Registration
