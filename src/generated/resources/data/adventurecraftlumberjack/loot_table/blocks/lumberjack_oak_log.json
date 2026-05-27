@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "adventurecraftlumberjack:lumberjack_oak_timber"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "adventurecraftlumberjack:blocks/lumberjack_oak_log"
+}

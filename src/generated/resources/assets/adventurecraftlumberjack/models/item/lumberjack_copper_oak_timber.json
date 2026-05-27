@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "adventurecraftlumberjack:item/lumberjack_copper_oak_timber"
+  }
+}

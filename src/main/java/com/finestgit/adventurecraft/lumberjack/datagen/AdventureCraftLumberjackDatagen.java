@@ -16,16 +16,12 @@ public class AdventureCraftLumberjackDatagen {
     @SubscribeEvent
     public static void gatherClientData(GatherDataEvent.Client event) {
         DataGenerator generator = event.getGenerator();
-
-        generator.addProvider(true, new LumberjackModelProvider(generator.getPackOutput()));
-    }
-
-    // Server: loot tables, tags, recipes, advancements
-    @SubscribeEvent
-    public static void gatherServerData(GatherDataEvent.Server event) {
-        DataGenerator generator = event.getGenerator();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+        // Client: models, blockstates, item models
+        generator.addProvider(true, new LumberjackModelProvider(generator.getPackOutput()));
+
+        // Server: loot tables, tags, recipes, advancements
         generator.addProvider(true, new LumberjackBlockTagsProvider(generator.getPackOutput(), lookupProvider));
         generator.addProvider(true, new LumberjackLootTableProvider(generator.getPackOutput(), lookupProvider));
     }
