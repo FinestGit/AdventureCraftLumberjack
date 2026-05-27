@@ -19,5 +19,7 @@ public class AdventureCraftLumberjackDatagen {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(true, new LumberjackBlockTagsProvider(generator.getPackOutput(), lookupProvider));
+
+        generator.addProvider(true, new LumberjackModelProvider(generator.getPackOutput()));
     }
 }

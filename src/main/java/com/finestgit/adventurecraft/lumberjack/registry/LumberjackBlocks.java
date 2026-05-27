@@ -19,11 +19,20 @@ public class LumberjackBlocks {
                                         () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
                                                         .mapColor(MapColor.WOOD)
                                                         .sound(SoundType.WOOD)
-                                                        .strength(0.6f, 10.0f));
+                                                        .strength(0.55f, 10.0f));
+        public static final DeferredBlock<LumberjackLogBlock> LUMBERJACK_COPPER_OAK_LOG = ModRegistry.BLOCKS
+                        .registerBlock("lumberjack_copper_oak_log",
+                                        properties -> new LumberjackLogBlock(properties, 2, 25, false),
+                                        () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
+                                                        .mapColor(MapColor.WOOD)
+                                                        .sound(SoundType.WOOD)
+                                                        .strength(0.55f, 10.0f));
 
         // Block Item Registration
         public static final DeferredItem<BlockItem> LUMBERJACK_OAK_LOG_ITEM = ModRegistry.ITEMS
                         .registerSimpleBlockItem("lumberjack_oak_log", LUMBERJACK_OAK_LOG);
+        public static final DeferredItem<BlockItem> LUMBERJACK_COPPER_OAK_LOG_ITEM = ModRegistry.ITEMS
+                        .registerSimpleBlockItem("lumberjack_copper_oak_log", LUMBERJACK_COPPER_OAK_LOG);
 
         public static void register() {
         }

@@ -55,10 +55,12 @@ public class WoodcuttingEvents {
         }
         Player player = event.getEntity();
 
-         float baseSpeed = 1.0f;
+        float baseSpeed = 1.0f;
 
-         float tierFactor = lumberjackBlock.getTier() / 5.0f;
+        // TODO: Put this in if statement for none Lumberjack Axe
+        // Multiplier for bare hand
+        float tierFactor = 1.0f / (5.0f * lumberjackBlock.getTier());
 
-         event.setNewSpeed(event.getNewSpeed() * baseSpeed * tierFactor);
+        event.setNewSpeed(event.getNewSpeed() * baseSpeed * tierFactor);
     }
 }

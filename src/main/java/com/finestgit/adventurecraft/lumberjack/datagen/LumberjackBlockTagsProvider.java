@@ -24,5 +24,6 @@ public class LumberjackBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider lookupProvider) {
         tag(WOODCUTTING_XP).add(LumberjackBlocks.LUMBERJACK_OAK_LOG.get());
+        tag(WOODCUTTING_XP).add(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get());
     }
 }

@@ -11,6 +11,7 @@ public class LumberjackCreativeTabs {
                     .icon(() -> LumberjackBlocks.LUMBERJACK_OAK_LOG_ITEM.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
                         output.accept(LumberjackBlocks.LUMBERJACK_OAK_LOG_ITEM.get());
+                        output.accept(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG_ITEM.get());
                     })
                     .build());
 
