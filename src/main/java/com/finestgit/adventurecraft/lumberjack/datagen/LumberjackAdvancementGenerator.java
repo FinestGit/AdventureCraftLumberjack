@@ -12,6 +12,7 @@ import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.Criterion;
+import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.advancements.criterion.LootTableTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
@@ -46,17 +47,12 @@ public class LumberjackAdvancementGenerator implements AdvancementSubProvider {
                         false)
                 .requirements(AdvancementRequirements.Strategy.OR);
 
-        builder.addCriterion("chop_oak_log",
-                lootTableUsedCriterion(LumberjackBlocks.LUMBERJACK_OAK_LOG.get().getLootTable()));
-        builder.addCriterion("chop_copper_log",
-                lootTableUsedCriterion(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get().getLootTable()));
+        builder.addCriterion("got_oak_timber",
+                InventoryChangeTrigger.TriggerInstance.hasItems(LumberjackItems.LUMBERJACK_OAK_TIMBER.get()));
+        builder.addCriterion("got_copper_timber",
+                InventoryChangeTrigger.TriggerInstance.hasItems(LumberjackItems.LUMBERJACK_COPPER_OAK_TIMBER.get()));
 
         saver.accept(builder
                 .build(Identifier.fromNamespaceAndPath(AdventureCraftLumberjack.MODID, "lumberjack/first_chop")));
-    }
-
-    private static Criterion<?> lootTableUsedCriterion(Optional<ResourceKey<LootTable>> lootTable) {
-        return LootTableTrigger.TriggerInstance
-                .lootTableUsed(lootTable.orElseThrow(() -> new IllegalStateException("Block has no loot table")));
     }
 }
