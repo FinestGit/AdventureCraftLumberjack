@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "chop_copper_log": {
+      "conditions": {
+        "loot_table": "adventurecraftlumberjack:blocks/lumberjack_copper_oak_log"
+      },
+      "trigger": "minecraft:player_generates_container_loot"
+    },
+    "chop_oak_log": {
+      "conditions": {
+        "loot_table": "adventurecraftlumberjack:blocks/lumberjack_oak_log"
+      },
+      "trigger": "minecraft:player_generates_container_loot"
+    }
+  },
+  "display": {
+    "background": "minecraft:gui/advancements/backgrounds/husbandry",
+    "description": {
+      "translate": "advancements.adventurecraftlumberjack.lumberjack.first_chop.description"
+    },
+    "icon": {
+      "id": "adventurecraftlumberjack:lumberjack_oak_timber"
+    },
+    "title": {
+      "translate": "advancements.adventurecraftlumberjack.lumberjack.first_chop.title"
+    }
+  },
+  "requirements": [
+    [
+      "chop_oak_log",
+      "chop_copper_log"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

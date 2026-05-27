@@ -1,4 +1,6 @@
 {
+  "advancements.adventurecraftlumberjack.lumberjack.first_chop.description": "Break a Lumberjack Log and collect timber.",
+  "advancements.adventurecraftlumberjack.lumberjack.first_chop.title": "First Chop",
   "block.adventurecraftlumberjack.lumberjack_copper_oak_log": "Lumberjack Copper Oak Log",
   "block.adventurecraftlumberjack.lumberjack_oak_log": "Lumberjack Oak Log",
   "item.adventurecraftlumberjack.lumberjack_copper_oak_timber": "Copper Oak Timber",
