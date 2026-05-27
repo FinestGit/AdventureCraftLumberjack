@@ -12,14 +12,21 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 @EventBusSubscriber(modid = AdventureCraftLumberjack.MODID)
 public class AdventureCraftLumberjackDatagen {
-
+    // Client: models, blockstates, item models
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent.Client event) {
+    public static void gatherClientData(GatherDataEvent.Client event) {
+        DataGenerator generator = event.getGenerator();
+
+        generator.addProvider(true, new LumberjackModelProvider(generator.getPackOutput()));
+    }
+
+    // Server: loot tables, tags, recipes, advancements
+    @SubscribeEvent
+    public static void gatherServerData(GatherDataEvent.Server event) {
         DataGenerator generator = event.getGenerator();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(true, new LumberjackBlockTagsProvider(generator.getPackOutput(), lookupProvider));
-
-        generator.addProvider(true, new LumberjackModelProvider(generator.getPackOutput()));
+        generator.addProvider(true, new LumberjackLootTableProvider(generator.getPackOutput(), lookupProvider));
     }
 }

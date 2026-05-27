@@ -1,11 +1,8 @@
 {
-  "itemGroup.adventurecraftlumberjack.lumberjack": "AdventureCraft Lumberjack Logs",
+  "itemGroup.adventurecraftlumberjack.lumberjack_logs": "AdventureCraft Lumberjack Logs",
+  "itemGroup.adventurecraftlumberjack.lumberjack_items": "AdventureCraft Lumberjack Items",
   "block.adventurecraftlumberjack.lumberjack_oak_log": "Lumberjack Oak Log",
   "block.adventurecraftlumberjack.lumberjack_copper_oak_log": "Lumberjack Copper Oak Log",
-
-  "itemGroup.adventurecraftlumberjack": "Example Mod Tab",
-  "block.adventurecraftlumberjack.example_block": "Example Block",
-  "item.adventurecraftlumberjack.example_item": "Example Item",
 
   "adventurecraftlumberjack.configuration.title": "AdventureCraft Lumberjack Configs",
   "adventurecraftlumberjack.configuration.section.adventurecraftlumberjack.common.toml": "AdventureCraft Lumberjack Configs",

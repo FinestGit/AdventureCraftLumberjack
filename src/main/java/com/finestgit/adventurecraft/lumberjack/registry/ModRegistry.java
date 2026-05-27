@@ -15,6 +15,7 @@ public class ModRegistry {
 
     public static void register(IEventBus modEventBus) {
         LumberjackBlocks.register();
+        LumberjackItems.register();
         LumberjackCreativeTabs.register();
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);

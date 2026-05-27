@@ -4,6 +4,7 @@ import java.util.stream.Stream;
 
 import com.finestgit.adventurecraft.lumberjack.AdventureCraftLumberjack;
 import com.finestgit.adventurecraft.lumberjack.registry.LumberjackBlocks;
+import com.finestgit.adventurecraft.lumberjack.registry.LumberjackItems;
 
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -21,10 +22,15 @@ public class LumberjackModelProvider extends ModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        // Block models
         blockModels.woodProvider(LumberjackBlocks.LUMBERJACK_OAK_LOG.get())
                 .log(LumberjackBlocks.LUMBERJACK_OAK_LOG.get());
         blockModels.woodProvider(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get())
                 .log(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get());
+
+        // Item models
+        blockModels.registerSimpleFlatItemModel(LumberjackItems.LUMBERJACK_OAK_TIMBER.get());
+        blockModels.registerSimpleFlatItemModel(LumberjackItems.LUMBERJACK_COPPER_OAK_TIMBER.get());
     }
 
     @Override
@@ -34,6 +40,7 @@ public class LumberjackModelProvider extends ModelProvider {
 
     @Override
     protected Stream<? extends Holder<Item>> getKnownItems() {
-        return Stream.of(LumberjackBlocks.LUMBERJACK_OAK_LOG_ITEM, LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG_ITEM);
+        return Stream.of(LumberjackBlocks.LUMBERJACK_OAK_LOG_ITEM, LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG_ITEM,
+                LumberjackItems.LUMBERJACK_OAK_TIMBER, LumberjackItems.LUMBERJACK_COPPER_OAK_TIMBER);
     }
 }
