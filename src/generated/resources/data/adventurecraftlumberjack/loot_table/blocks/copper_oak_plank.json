@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "adventurecraftlumberjack:oak_copper_plank"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "adventurecraftlumberjack:blocks/copper_oak_plank"
+}

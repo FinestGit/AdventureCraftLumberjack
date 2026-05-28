@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_oak_timber": {
+      "conditions": {
+        "items": [
+          {
+            "items": "adventurecraftlumberjack:lumberjack_oak_timber"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "adventurecraftlumberjack:oak_planks_from_timber"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_oak_timber"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "adventurecraftlumberjack:oak_planks_from_timber"
+    ]
+  }
+}
