@@ -20,6 +20,8 @@ import net.minecraft.world.item.crafting.Recipe;
 public class LumberjackRecipeProvider extends RecipeProvider {
     ResourceKey<Recipe<?>> timber_to_planks_id = ResourceKey.create(Registries.RECIPE,
             Identifier.fromNamespaceAndPath(AdventureCraftLumberjack.MODID, "oak_planks_from_timber"));
+    ResourceKey<Recipe<?>> timber_to_copper_planks_id = ResourceKey.create(Registries.RECIPE,
+            Identifier.fromNamespaceAndPath(AdventureCraftLumberjack.MODID, "copper_planks_from_timber"));
 
     protected LumberjackRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
         super(registries, output);
@@ -34,7 +36,7 @@ public class LumberjackRecipeProvider extends RecipeProvider {
         shapeless(RecipeCategory.BUILDING_BLOCKS, LumberjackBlocks.COPPER_OAK_PLANK, 4)
                 .requires(LumberjackItems.LUMBERJACK_COPPER_OAK_TIMBER.get())
                 .unlockedBy("has_copper_timber", has(LumberjackItems.LUMBERJACK_COPPER_OAK_TIMBER.get()))
-                .save(output, timber_to_planks_id);
+                .save(output, timber_to_copper_planks_id);
     }
 
     public static class Runner extends RecipeProvider.Runner {
