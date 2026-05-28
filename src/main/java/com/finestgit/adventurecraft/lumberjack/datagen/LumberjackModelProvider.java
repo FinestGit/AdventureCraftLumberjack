@@ -9,6 +9,7 @@ import com.finestgit.adventurecraft.lumberjack.registry.LumberjackItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -27,20 +28,24 @@ public class LumberjackModelProvider extends ModelProvider {
                 .log(LumberjackBlocks.LUMBERJACK_OAK_LOG.get());
         blockModels.woodProvider(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get())
                 .log(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get());
+        blockModels.createTrivialBlock(LumberjackBlocks.COPPER_OAK_PLANK.get(), TexturedModel.CUBE);
 
         // Item models
         blockModels.registerSimpleFlatItemModel(LumberjackItems.LUMBERJACK_OAK_TIMBER.get());
         blockModels.registerSimpleFlatItemModel(LumberjackItems.LUMBERJACK_COPPER_OAK_TIMBER.get());
+        blockModels.registerSimpleFlatItemModel(LumberjackBlocks.COPPER_OAK_PLANK.get());
     }
 
     @Override
     protected Stream<? extends Holder<Block>> getKnownBlocks() {
-        return Stream.of(LumberjackBlocks.LUMBERJACK_OAK_LOG, LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG);
+        return Stream.of(LumberjackBlocks.LUMBERJACK_OAK_LOG, LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG,
+                LumberjackBlocks.COPPER_OAK_PLANK);
     }
 
     @Override
     protected Stream<? extends Holder<Item>> getKnownItems() {
         return Stream.of(LumberjackBlocks.LUMBERJACK_OAK_LOG_ITEM, LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG_ITEM,
+                LumberjackBlocks.COPPER_OAK_PLANK_ITEM,
                 LumberjackItems.LUMBERJACK_OAK_TIMBER, LumberjackItems.LUMBERJACK_COPPER_OAK_TIMBER);
     }
 }

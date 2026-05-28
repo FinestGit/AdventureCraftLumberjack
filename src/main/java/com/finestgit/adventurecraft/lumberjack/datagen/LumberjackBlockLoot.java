@@ -20,12 +20,14 @@ public class LumberjackBlockLoot extends BlockLootSubProvider {
     protected void generate() {
         dropOther(LumberjackBlocks.LUMBERJACK_OAK_LOG.get(), LumberjackItems.LUMBERJACK_OAK_TIMBER.get());
         dropOther(LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get(), LumberjackItems.LUMBERJACK_COPPER_OAK_TIMBER.get());
+        dropSelf(LumberjackBlocks.COPPER_OAK_PLANK.get());
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return List.of(
                 LumberjackBlocks.LUMBERJACK_OAK_LOG.get(),
-                LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get());
+                LumberjackBlocks.LUMBERJACK_COPPER_OAK_LOG.get(),
+                LumberjackBlocks.COPPER_OAK_PLANK.get());
     }
 }

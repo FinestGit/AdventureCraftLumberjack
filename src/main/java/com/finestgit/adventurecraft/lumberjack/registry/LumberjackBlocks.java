@@ -3,6 +3,7 @@ package com.finestgit.adventurecraft.lumberjack.registry;
 import com.finestgit.adventurecraft.lumberjack.block.LumberjackLogBlock;
 
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,12 +28,17 @@ public class LumberjackBlocks {
                                                         .mapColor(MapColor.WOOD)
                                                         .sound(SoundType.WOOD)
                                                         .strength(0.55f, 10.0f));
+        public static final DeferredBlock<Block> COPPER_OAK_PLANK = ModRegistry.BLOCKS
+                        .registerSimpleBlock("copper_oak_plank",
+                                        () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
 
         // Block Item Registration
         public static final DeferredItem<BlockItem> LUMBERJACK_OAK_LOG_ITEM = ModRegistry.ITEMS
                         .registerSimpleBlockItem("lumberjack_oak_log", LUMBERJACK_OAK_LOG);
         public static final DeferredItem<BlockItem> LUMBERJACK_COPPER_OAK_LOG_ITEM = ModRegistry.ITEMS
                         .registerSimpleBlockItem("lumberjack_copper_oak_log", LUMBERJACK_COPPER_OAK_LOG);
+        public static final DeferredItem<BlockItem> COPPER_OAK_PLANK_ITEM = ModRegistry.ITEMS
+                        .registerSimpleBlockItem("oak_copper_plank", COPPER_OAK_PLANK);
 
         public static void register() {
         }
